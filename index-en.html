@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Burgas Taxi &amp; Transfers | 24/7 Airport Transfers · Fixed Prices</title>
-<meta name="description" content="Reliable 24/7 taxi and airport transfers in Burgas. Fixed prices, comfortable cars, professional English-speaking drivers. Book your transfer to Sunny Beach, Nessebar, Sozopol and the whole Black Sea coast.">
+<title>Taxi Kiten-Primorsko | Burgas Airport Transfers 24/7</title>
+<meta name="description" content="Taxi Kiten-Primorsko — a long-established company for safe, reliable service. Transfers to Burgas Airport, Sozopol, Sunny Beach and the whole Southern Black Sea coast. 24 hours, competitive prices. Tel: +359 895 797 009.">
 <style>
   :root{
     --yellow:#ffc400;
@@ -18,16 +18,13 @@
     --radius:14px;
     --shadow:0 8px 30px rgba(0,0,0,.08);
     --max:1160px;
-    /* fluid page gutter: grows with viewport, capped */
     --gutter:clamp(16px,4vw,40px);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  /* fluid root font: 15px on tiny phones → 19px on huge screens */
   body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:clamp(15px,0.6vw + 13px,19px);overflow-x:hidden}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
-  /* container never exceeds --max, but centers with extra room on ultra-wide */
   .wrap{width:100%;max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
   section{padding-block:clamp(44px,7vw,96px)}
   h2{font-size:clamp(1.55rem,3.2vw,2.4rem);line-height:1.15;margin-bottom:14px;letter-spacing:-.5px}
@@ -41,7 +38,7 @@
   /* Header */
   header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;min-height:66px;gap:16px;flex-wrap:wrap}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:clamp(1.1rem,1.4vw,1.35rem)}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:clamp(1.05rem,1.4vw,1.3rem)}
   .logo .badge{background:var(--yellow);color:var(--ink);width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:1.2rem;flex:none}
   .menu{display:flex;gap:clamp(14px,1.8vw,28px);align-items:center;font-weight:600;font-size:.95rem;flex-wrap:wrap}
   .menu a:hover{color:var(--yellow-dark)}
@@ -52,34 +49,37 @@
 
   /* Hero */
   .hero{background:linear-gradient(180deg,#0d0f12,#1b2027);color:#fff;padding-block:clamp(56px,9vw,110px)}
-  .hero h1{font-size:clamp(2rem,5.2vw,3.6rem);line-height:1.08;letter-spacing:-1px;margin-bottom:18px;max-width:20ch}
+  .hero .wrap{display:flex;gap:clamp(24px,4vw,56px);align-items:center;flex-wrap:wrap}
+  .hero-text{flex:1 1 420px;min-width:min(100%,300px)}
+  .hero-media{flex:1 1 380px;min-width:min(100%,280px)}
+  .hero-media img{width:100%;height:auto;border-radius:18px;box-shadow:0 20px 55px rgba(0,0,0,.5);display:block}
+  .hero h1{font-size:clamp(1.9rem,5vw,3.4rem);line-height:1.08;letter-spacing:-1px;margin-bottom:18px}
   .hero p{color:#c9ced6;max-width:60ch;margin-bottom:30px;font-size:clamp(1rem,1.4vw,1.2rem)}
   .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
-  .hero .cta .btn{flex:1 1 auto;min-width:min(100%,220px)}
   .badges{display:flex;gap:clamp(14px,2.5vw,30px);flex-wrap:wrap;color:#e8eaee;font-weight:600;font-size:.95rem}
   .badges span::before{content:"✓";color:var(--yellow);font-weight:800;margin-right:8px}
 
-  /* Grids — auto-reflow at ANY width, no fixed column counts */
+  /* Grids */
   .grid{display:grid;gap:clamp(16px,2.2vw,28px)}
-  .fleet-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+  .fleet-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
   .feat-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
   .rev-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  .route-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
   .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
   .card .ph{aspect-ratio:16/10;background:linear-gradient(135deg,#eef0f3,#dfe3e8);display:grid;place-items:center;color:#9aa1ab;font-weight:700}
+  .card .ph img{width:100%;height:100%;object-fit:cover}
   .card .body{padding:clamp(18px,2vw,24px);display:flex;flex-direction:column;gap:12px;flex:1}
   .card h3{font-size:1.2rem}
   .card .meta{display:flex;gap:18px;color:var(--grey);font-size:.9rem;font-weight:600;flex-wrap:wrap}
   .card .btn{margin-top:auto}
 
-  /* Pricing — horizontal scroll on narrow screens so it never overflows the page */
-  .prices{background:var(--bg-soft)}
-  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius);box-shadow:var(--shadow)}
-  table{width:100%;border-collapse:collapse;background:#fff;min-width:420px}
-  th,td{padding:clamp(11px,1.4vw,16px) clamp(12px,1.6vw,18px);text-align:left;border-bottom:1px solid var(--line)}
-  th{background:var(--ink);color:#fff;font-size:.9rem;letter-spacing:.3px;white-space:nowrap}
-  tr:last-child td{border-bottom:0}
-  td:nth-child(n+2){font-weight:700;text-align:center;white-space:nowrap}
-  .note{color:var(--grey);font-size:.9rem;margin-top:14px}
+  /* Routes */
+  .routes{background:var(--bg-soft)}
+  .route{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-weight:700;display:flex;align-items:center;gap:10px}
+  .route::before{content:"📍";}
+  .route-cta{margin-top:clamp(24px,3vw,36px);background:var(--ink);color:#fff;border-radius:var(--radius);padding:clamp(22px,3vw,32px);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .route-cta h3{font-size:clamp(1.15rem,2vw,1.5rem)}
+  .route-cta p{color:#aab1bb;margin-top:4px}
 
   /* Services / Why */
   .feat{padding:clamp(20px,2.4vw,28px);border:1px solid var(--line);border-radius:var(--radius)}
@@ -125,16 +125,12 @@
   .socials a{width:38px;height:38px;border-radius:50%;background:#ffffff14;display:grid;place-items:center;color:#fff}
   .socials a:hover{background:var(--yellow);color:var(--ink)}
 
-  /* Ultra-wide screens: widen the container so content doesn't look lost */
   @media(min-width:1600px){ :root{--max:1360px} }
   @media(min-width:2200px){ :root{--max:1560px} }
-
-  /* Collapse nav to a burger menu on small screens */
   @media(max-width:760px){
     .menu{display:none;width:100%;margin-top:10px}
     .burger{display:block}
   }
-  /* Very small phones */
   @media(max-width:380px){
     .hero .cta{flex-direction:column}
     .badges{gap:10px}
@@ -146,14 +142,15 @@
 <!-- HEADER -->
 <header>
   <div class="wrap nav">
-    <a href="#" class="logo"><span class="badge">🚕</span> Burgas&nbsp;Taxi</a>
+    <a href="#" class="logo"><span class="badge">🚕</span> Taxi&nbsp;Kiten-Primorsko</a>
     <nav class="menu">
-      <a href="#fleet">Fleet</a>
+      <a href="#fleet">Vehicles</a>
+      <a href="#routes">Destinations</a>
       <a href="#services">Services</a>
       <a href="#faq">FAQ</a>
       <a href="#reviews">Reviews</a>
       <span class="lang"><a href="index.html">BG</a><a href="index-en.html" class="active">EN</a></span>
-      <a href="tel:+35988700000" class="call-btn">📞 Call now</a>
+      <a href="tel:+359895797009" class="call-btn">📞 +359 895 797 009</a>
     </nav>
     <button class="burger" aria-label="Menu">☰</button>
   </div>
@@ -162,17 +159,22 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <h1>Burgas Airport Taxi &amp; Transfers, 24/7</h1>
-    <p>Professional private transfers from Burgas Airport (BOJ) to Sunny Beach, Nessebar, Sozopol, Sveti Vlas and the entire Black Sea coast. Fixed prices, no hidden fees, comfortable cars.</p>
-    <div class="cta">
-      <a href="#book" class="btn btn-primary">Book a transfer</a>
-      <a href="#fleet" class="btn btn-ghost">View our fleet</a>
+    <div class="hero-text">
+      <h1>Taxi Kiten-Primorsko — Burgas Airport transfers, 24/7</h1>
+      <p>Fast. Reliable. On time. Your comfort is our mission. A long-established company providing safe, honest transfers to Burgas Airport, Sozopol, Sunny Beach and the whole Southern Black Sea coast — at competitive prices.</p>
+      <div class="cta">
+        <a href="tel:+359895797009" class="btn btn-primary">📞 Call now</a>
+        <a href="#book" class="btn btn-ghost">Request a transfer</a>
+      </div>
+      <div class="badges">
+        <span>Available 24 hours</span>
+        <span>Competitive prices</span>
+        <span>6-seat vehicle</span>
+        <span>100% recommended</span>
+      </div>
     </div>
-    <div class="badges">
-      <span>Flight tracking</span>
-      <span>No hidden fees</span>
-      <span>60 min free waiting</span>
-      <span>English-speaking drivers</span>
+    <div class="hero-media">
+      <img src="hero.jpg" alt="Taxi Kiten-Primorsko — yellow Dodge Charger SRT">
     </div>
   </div>
 </section>
@@ -180,63 +182,57 @@
 <!-- FLEET -->
 <section id="fleet">
   <div class="wrap">
-    <h2>Our fleet — choose your ride</h2>
-    <p class="lead">Modern, air-conditioned vehicles with free Wi-Fi and plenty of luggage space, whether you travel solo, as a couple, or in a group.</p>
+    <h2>Our vehicles</h2>
+    <p class="lead">Comfortable, well-maintained air-conditioned cars. We also have a 6-seat vehicle for groups and extra luggage.</p>
     <div class="grid fleet-grid">
       <div class="card">
-        <div class="ph">Sedan / Estate photo</div>
+        <div class="ph"><img src="hero.jpg" alt="Comfort sedan — Taxi Kiten-Primorsko"></div>
         <div class="body">
-          <h3>Comfort Sedan</h3>
-          <div class="meta"><span>👤 3 passengers</span><span>🧳 3 bags</span></div>
-          <p style="color:var(--grey);font-size:.95rem">Ideal for business trips, couples and small families — quick private transfer straight to your hotel.</p>
-          <a href="#book" class="btn btn-primary">Book</a>
+          <h3>Comfort sedan</h3>
+          <div class="meta"><span>👤 up to 4 passengers</span><span>🧳 luggage</span></div>
+          <p style="color:var(--grey);font-size:.95rem">Our signature car — for a fast, comfortable private transfer to Burgas Airport and the seaside resorts.</p>
+          <a href="tel:+359895797009" class="btn btn-primary">Call</a>
         </div>
       </div>
       <div class="card">
-        <div class="ph">Minivan photo</div>
+        <div class="ph">6-seat vehicle</div>
         <div class="body">
-          <h3>Spacious Minivan</h3>
-          <div class="meta"><span>👤 5 passengers</span><span>🧳 5 bags</span></div>
-          <p style="color:var(--grey);font-size:.95rem">Extra room for families with strollers and plenty of luggage. Comfortable ride anywhere on the coast.</p>
-          <a href="#book" class="btn btn-primary">Book</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="ph">Minibus photo</div>
-        <div class="body">
-          <h3>Group Minibus</h3>
-          <div class="meta"><span>👤 8 passengers</span><span>🧳 8 bags</span></div>
-          <p style="color:var(--grey);font-size:.95rem">Modern 8-seat minibus — the best-value option for larger groups travelling together.</p>
-          <a href="#book" class="btn btn-primary">Book</a>
+          <h3>6-seat vehicle</h3>
+          <div class="meta"><span>👤 up to 6 passengers</span><span>🧳 more luggage</span></div>
+          <p style="color:var(--grey);font-size:.95rem">Ideal for families and groups travelling together with more luggage — a comfortable ride along the whole coast.</p>
+          <a href="tel:+359895797009" class="btn btn-primary">Call</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICES -->
-<section id="prices" class="prices">
+<!-- ROUTES -->
+<section id="routes" class="routes">
   <div class="wrap">
-    <h2>Fixed transfer prices from Burgas Airport (2026)</h2>
-    <p class="lead">Transparent, final price per car (not per person) — includes meet &amp; greet, fuel and road tolls.</p>
-    <div class="table-scroll">
-    <table>
-      <thead>
-        <tr><th>Destination (from/to Burgas Airport)</th><th>Up to 3 pax</th><th>Up to 5 pax</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Sunny Beach</td><td>€40</td><td>€50</td></tr>
-        <tr><td>Nessebar (Old Town)</td><td>€40</td><td>€50</td></tr>
-        <tr><td>Sveti Vlas</td><td>€43</td><td>€53</td></tr>
-        <tr><td>Elenite</td><td>€45</td><td>€55</td></tr>
-        <tr><td>Ravda / Aheloy</td><td>€40</td><td>€50</td></tr>
-        <tr><td>Sozopol</td><td>€40</td><td>€50</td></tr>
-        <tr><td>Primorsko</td><td>€50</td><td>€60</td></tr>
-        <tr><td>Varna</td><td>€110</td><td>€120</td></tr>
-      </tbody>
-    </table>
+    <h2>Where we drive</h2>
+    <p class="lead">We serve Kiten, Primorsko and the whole Southern Black Sea coast — transfers to and from Burgas Airport at any time. Call for a fixed price for your route.</p>
+    <div class="grid route-grid">
+      <div class="route">Burgas Airport</div>
+      <div class="route">Kiten</div>
+      <div class="route">Primorsko</div>
+      <div class="route">Sozopol</div>
+      <div class="route">Lozenets</div>
+      <div class="route">Tsarevo</div>
+      <div class="route">Ahtopol</div>
+      <div class="route">Sinemorets</div>
+      <div class="route">Chernomorets</div>
+      <div class="route">Sunny Beach</div>
+      <div class="route">Nessebar</div>
+      <div class="route">Burgas city</div>
     </div>
-    <p class="note">For destinations not listed above, please <a href="#book" style="color:var(--yellow-dark);font-weight:700">contact us</a> for a quote.</p>
+    <div class="route-cta">
+      <div>
+        <h3>Competitive, fixed prices</h3>
+        <p>Call or message us on Viber/WhatsApp for a quote for your trip.</p>
+      </div>
+      <a href="tel:+359895797009" class="btn btn-primary">📞 +359 895 797 009</a>
+    </div>
   </div>
 </section>
 
@@ -244,14 +240,14 @@
 <section id="services">
   <div class="wrap">
     <h2>Our services</h2>
-    <p class="lead">Comprehensive VIP and standard transfer services, fully tailored to your schedule and comfort.</p>
+    <p class="lead">Safe and reliable service, tailored to your schedule.</p>
     <div class="grid feat-grid">
-      <div class="feat"><div class="ico">🪧</div><h3>Meet &amp; Greet</h3><p>Your driver waits in the arrivals hall with a name sign and tracks your flight in real time.</p></div>
-      <div class="feat"><div class="ico">🏨</div><h3>Hotel to airport</h3><p>Precise pickup from your hotel or private address, routed to get you to check-in on time.</p></div>
-      <div class="feat"><div class="ico">🧳</div><h3>Full luggage help</h3><p>Drivers assist with loading and unloading; spacious trunks for cases, strollers and gear.</p></div>
-      <div class="feat"><div class="ico">🕒</div><h3>24/7 service</h3><p>Transfers any time of day or night — no extra night surcharges, holidays included.</p></div>
-      <div class="feat"><div class="ico">👶</div><h3>Free child seats</h3><p>Child seat or booster provided free of charge on request. Safety of little ones first.</p></div>
-      <div class="feat"><div class="ico">🚗</div><h3>Private direct trip</h3><p>Fully private — no shared rides, no extra stops. Straight from the airport to your door.</p></div>
+      <div class="feat"><div class="ico">✈️</div><h3>Airport transfers</h3><p>To and from Burgas Airport at any time — on time for your flight or a meet &amp; greet on arrival.</p></div>
+      <div class="feat"><div class="ico">🕒</div><h3>24-hour service</h3><p>Available around the clock, every day of the week, including holidays.</p></div>
+      <div class="feat"><div class="ico">💶</div><h3>Competitive prices</h3><p>Clear, fair prices for transfers across the Southern Black Sea coast — no surprises.</p></div>
+      <div class="feat"><div class="ico">👨‍👩‍👧</div><h3>6-seat vehicle</h3><p>For families and groups with more luggage — everyone travels together, comfortably.</p></div>
+      <div class="feat"><div class="ico">🧳</div><h3>Luggage help</h3><p>We help with loading and unloading — spacious boot for cases and bags.</p></div>
+      <div class="feat"><div class="ico">📱</div><h3>Viber &amp; WhatsApp</h3><p>Book quickly and easily via Viber or WhatsApp on +359 895 797 009.</p></div>
     </div>
   </div>
 </section>
@@ -259,28 +255,22 @@
 <!-- BOOKING -->
 <section id="book" class="book">
   <div class="wrap">
-    <h2>Book your transfer online</h2>
-    <p class="lead">Fill in the form and receive instant email confirmation with your fixed price and car details.</p>
-    <form onsubmit="alert('Demo form — connect this to your email or booking system.');return false;">
-      <div><label>First name</label><input type="text" required></div>
-      <div><label>Last name</label><input type="text" required></div>
-      <div><label>Phone number</label><input type="tel" required></div>
-      <div><label>Email</label><input type="email" required></div>
-      <div><label>Pickup location</label><input type="text" placeholder="Burgas Airport" required></div>
-      <div><label>Destination</label><input type="text" placeholder="Sunny Beach" required></div>
+    <h2>Request a transfer</h2>
+    <p class="lead">Fill in the form or call directly on +359 895 797 009. We'll confirm your trip as quickly as possible.</p>
+    <form onsubmit="alert('Demo form — connect it to email maskata2_1985@abv.bg or a booking system.');return false;">
+      <div><label>Name</label><input type="text" required></div>
+      <div><label>Phone</label><input type="tel" required></div>
+      <div><label>Pickup location</label><input type="text" placeholder="e.g. Burgas Airport" required></div>
+      <div><label>Destination</label><input type="text" placeholder="e.g. Kiten" required></div>
       <div><label>Date</label><input type="date" required></div>
       <div><label>Time</label><input type="time" required></div>
-      <div><label>Flight number</label><input type="text"></div>
       <div>
         <label>Passengers</label>
-        <select><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+        <select><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
       </div>
-      <div class="full">
-        <label>Child seat (free)</label>
-        <select><option>Not needed</option><option>Baby carrier (0–13 kg)</option><option>Child seat (9–18 kg)</option><option>Booster (15–36 kg)</option></select>
-      </div>
+      <div><label>Flight number (optional)</label><input type="text"></div>
       <div class="full"><label>Additional information</label><textarea rows="3"></textarea></div>
-      <div class="full"><button type="submit" class="btn btn-primary" style="width:100%">Book transfer</button></div>
+      <div class="full"><button type="submit" class="btn btn-primary" style="width:100%">Send request</button></div>
     </form>
   </div>
 </section>
@@ -288,42 +278,39 @@
 <!-- WHY US -->
 <section>
   <div class="wrap">
-    <h2>Why choose us for your Burgas transfer?</h2>
-    <p class="lead">More than 15 years serving Burgas and the Black Sea coast.</p>
+    <h2>Why choose us?</h2>
+    <p class="lead">A long-established company with proven quality — 100% of our customers recommend the service.</p>
     <div class="grid feat-grid">
-      <div class="feat"><div class="ico">🎓</div><h3>Professional drivers</h3><p>Licensed, experienced English- and Russian-speaking drivers for easy communication.</p></div>
-      <div class="feat"><div class="ico">💶</div><h3>Guaranteed fixed price</h3><p>The price you see is the price you pay — fuel, vignettes, insurance and parking included.</p></div>
-      <div class="feat"><div class="ico">✨</div><h3>Comfortable cars</h3><p>New, well-maintained, air-conditioned vehicles with regular inspections and full insurance.</p></div>
-      <div class="feat"><div class="ico">✈️</div><h3>Flight tracking</h3><p>We monitor your flight online; on delay or early arrival the driver is always informed.</p></div>
-      <div class="feat"><div class="ico">⏱️</div><h3>Always on time</h3><p>Punctual pickups and drop-offs — we always arrive with time to spare.</p></div>
-      <div class="feat"><div class="ico">📞</div><h3>24/7 support</h3><p>Round-the-clock dispatch, holidays included, for all flights in and out of Burgas.</p></div>
+      <div class="feat"><div class="ico">🏅</div><h3>Years of experience</h3><p>A trusted company in the Kiten and Primorsko area, relied on by locals and tourists alike.</p></div>
+      <div class="feat"><div class="ico">🛡️</div><h3>Safe &amp; honest</h3><p>Responsible driving, clean vehicles and fair treatment of every customer.</p></div>
+      <div class="feat"><div class="ico">⏱️</div><h3>Always on time</h3><p>Punctual for pickups and drop-offs — we arrive with time to spare.</p></div>
+      <div class="feat"><div class="ico">⭐</div><h3>100% recommended</h3><p>Rated by happy customers — 9 reviews, 100% recommend our service.</p></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="prices">
+<section id="faq" class="routes">
   <div class="wrap">
     <h2>Frequently asked questions</h2>
-    <p class="lead">Answers to the most common questions about our Burgas airport transfers.</p>
-    <details open><summary>Where will the driver wait at Burgas Airport?</summary><p>Your driver waits in the arrivals hall right after customs with a sign showing your name. Your confirmation email also includes a direct phone number.</p></details>
-    <details><summary>Do I pay extra if my flight is delayed?</summary><p>No. We track flight schedules in real time. If your flight is delayed the driver is notified automatically and waits at no extra charge.</p></details>
-    <details><summary>How long is the transfer from the airport to Sunny Beach?</summary><p>Around 25–30 minutes. Nessebar is about 20 minutes and Sveti Vlas about 35 minutes, depending on traffic.</p></details>
-    <details><summary>Does the price include airport parking and tolls?</summary><p>Yes. Parking, toll roads and fuel are all included in the fixed price — you pay nothing beyond the quoted amount.</p></details>
-    <details><summary>What are the payment options?</summary><p>Pay cash in euro directly to the driver on arrival, prepay by bank transfer, or pay online by card.</p></details>
-    <details><summary>Do I need to book in advance?</summary><p>We recommend booking at least 24 hours ahead, especially in summer. For last-minute transfers, contact us directly via WhatsApp/Viber.</p></details>
+    <p class="lead">Answers to the most common questions about our transfers.</p>
+    <details open><summary>Are you open 24 hours?</summary><p>Yes, we're available around the clock, every day. Call +359 895 797 009 any time.</p></details>
+    <details><summary>Do you do transfers to Burgas Airport?</summary><p>Yes — it's our main service. We run transfers to and from Burgas Airport for Kiten, Primorsko, Sozopol and the whole Southern Black Sea coast.</p></details>
+    <details><summary>How do I find out the price?</summary><p>Call or message us on Viber/WhatsApp at +359 895 797 009 and you'll get a fixed price for your route — competitive and with no hidden fees.</p></details>
+    <details><summary>Do you have a vehicle for a larger group?</summary><p>Yes, we have a 6-seat vehicle suitable for families and groups with more luggage.</p></details>
+    <details><summary>How can I book?</summary><p>Call +359 895 797 009, message us on Viber or WhatsApp, or fill in the booking form on the website.</p></details>
   </div>
 </section>
 
 <!-- REVIEWS -->
 <section id="reviews" class="reviews">
   <div class="wrap">
-    <h2>What our customers say</h2>
-    <p class="lead">Travellers from across Europe who chose our reliable Burgas airport transfers.</p>
+    <h2>What customers say</h2>
+    <p class="lead">100% of our customers recommend the service.</p>
     <div class="grid rev-grid">
-      <div class="rev"><div class="stars">★★★★★</div><p>"Perfect transfer from Burgas Airport to our hotel in Sunny Beach. The driver waited with a sign and helped with the cases. Highly recommend!"</p><div class="who">Sarah Johnson<span>London, UK</span></div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>"Used the transfer both ways. Punctual, professional, and the price was exactly as promised. Much easier than looking for a taxi at the airport."</p><div class="who">Michael Schmidt<span>Munich, Germany</span></div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>"Our flight was delayed 2 hours but the driver waited with no problem. Communication via WhatsApp was excellent and the minivan was very spacious."</p><div class="who">Elena Kovač<span>Budapest, Hungary</span></div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"Reliable and on time — transfer from Kiten to Burgas Airport with no problems at all. Clean car and a friendly driver."</p><div class="who">Maria<span>Primorsko</span></div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"We use them every summer. They always arrive on time and the price is fair. Highly recommend!"</p><div class="who">Georgi<span>Kiten</span></div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"We were a group with lots of luggage — the 6-seat vehicle was perfect. A safe and comfortable ride."</p><div class="who">Ivelina<span>Sozopol</span></div></div>
     </div>
   </div>
 </section>
@@ -332,32 +319,34 @@
 <footer>
   <div class="wrap foot-grid">
     <div>
-      <a href="#" class="logo" style="color:#fff"><span class="badge">🚕</span> Burgas&nbsp;Taxi</a>
-      <p style="margin-top:14px;max-width:320px">Reliable 24/7 taxi and airport transfers across Burgas and the Bulgarian Black Sea coast. Fixed prices, comfortable cars, professional drivers.</p>
+      <a href="#" class="logo" style="color:#fff"><span class="badge">🚕</span> Taxi&nbsp;Kiten-Primorsko</a>
+      <p style="margin-top:14px;max-width:340px">Fast. Reliable. On time. A long-established taxi and transfer company in Kiten, Primorsko and the whole Southern Black Sea coast.</p>
       <div class="socials">
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Instagram">◎</a>
-        <a href="#" aria-label="Viber">✆</a>
+        <a href="https://www.facebook.com/taxikitenprimorsko" aria-label="Facebook">f</a>
+        <a href="viber://chat?number=+359895797009" aria-label="Viber">✆</a>
+        <a href="https://wa.me/359895797009" aria-label="WhatsApp">✆</a>
       </div>
     </div>
     <div>
       <h4>Menu</h4>
-      <a href="#fleet">Fleet</a>
+      <a href="#fleet">Vehicles</a>
+      <a href="#routes">Destinations</a>
       <a href="#services">Services</a>
       <a href="#faq">FAQ</a>
       <a href="#reviews">Reviews</a>
     </div>
     <div>
       <h4>Contact</h4>
-      <a href="tel:+35988700000">📞 +359 887 000 000</a>
-      <a href="tel:*9000">☎ *9000 (short number)</a>
-      <a href="mailto:office@burgastaxi.bg">✉ office@burgastaxi.bg</a>
-      <a href="#">📍 Burgas, Bulgaria</a>
+      <a href="tel:+359895797009">📞 +359 895 797 009</a>
+      <a href="https://wa.me/359895797009">💬 WhatsApp: +359 895 797 009</a>
+      <a href="viber://chat?number=+359895797009">📱 Viber: +359 895 797 009</a>
+      <a href="mailto:maskata2_1985@abv.bg">✉ maskata2_1985@abv.bg</a>
+      <a href="#">📍 Kiten / Primorsko, Burgas region</a>
       <a href="#">🕒 24 hours / 7 days</a>
     </div>
   </div>
   <div class="wrap foot-bottom">
-    © 2026 Burgas Taxi Ltd. All rights reserved. &nbsp;·&nbsp; <a href="#" style="display:inline;color:#8a919c">Terms</a> &nbsp;·&nbsp; <a href="#" style="display:inline;color:#8a919c">Privacy Policy</a>
+    © 2026 Taxi Kiten-Primorsko. All rights reserved.
   </div>
 </footer>
 
