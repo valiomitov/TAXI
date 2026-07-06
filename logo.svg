@@ -1,0 +1,10 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Такси Китен-Приморско лого">
+  <defs>
+    <clipPath id="circle"><circle cx="256" cy="256" r="256"/></clipPath>
+  </defs>
+  <g clip-path="url(#circle)">
+    <rect x="0" y="0" width="512" height="247" fill="#F2C218"/>
+    <rect x="0" y="247" width="512" height="18" fill="#ffffff"/>
+    <rect x="0" y="265" width="512" height="247" fill="#2C6CB4"/>
+  </g>
+</svg>
