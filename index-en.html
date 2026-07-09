@@ -40,19 +40,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:image" content="https://valiomitov.github.io/TAXI/hero.jpg">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 
-<!-- ============================================================= -->
-<!-- Google tag (gtag.js) — GA4 + Google Ads                       -->
-<!-- REPLACE 'G-PFPPL30DPM' with your GA4 Measurement ID           -->
-<!-- REPLACE 'AW-XXXXXXXXX' with your Google Ads Conversion ID     -->
-<!-- ============================================================= -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPPL30DPM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PFPPL30DPM');   /* Google Analytics 4 */
-  gtag('config', 'AW-XXXXXXXXX');   /* Google Ads */
-</script>
 
 <!-- Structured data: LocalBusiness / TaxiService (SEO + GEO) -->
 <script type="application/ld+json">
@@ -536,7 +523,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 
   /* ---- Conversion & event tracking (GA4 + Google Ads) ---- */
-  function track(name, params){ if(typeof gtag==='function'){ gtag('event', name, params||{}); } }
+  function track(name, params){ window.dataLayer=window.dataLayer||[]; var e=params||{}; e.event=name; dataLayer.push(e); }
   document.addEventListener('click', function(e){
     var a = e.target.closest('a'); if(!a) return;
     var href = a.getAttribute('href') || '';
