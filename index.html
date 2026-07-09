@@ -234,6 +234,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .rev .who{margin-top:14px;font-weight:700;font-size:.9rem}
   .rev .who span{display:block;color:var(--grey);font-weight:500}
 
+
+  /* Fleet sliders */
+  .sliders{display:grid;grid-template-columns:2fr 1fr;gap:clamp(16px,2.2vw,28px);align-items:stretch}
+  .slider{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#eef0f3}
+  .slider-h{aspect-ratio:3/2}
+  .slider .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;height:100%}
+  .slider .slides::-webkit-scrollbar{display:none}
+  .slider .slides img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:center}
+  .sl-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:#ffffffd9;color:var(--ink);font-size:1.5rem;font-weight:800;cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.25);line-height:1;padding:0 0 4px}
+  .sl-btn:hover{background:var(--yellow)}
+  .sl-btn.prev{left:12px}.sl-btn.next{right:12px}
+  .sl-dots{position:absolute;bottom:10px;left:0;right:0;display:flex;gap:6px;justify-content:center;pointer-events:none}
+  .sl-dots span{width:8px;height:8px;border-radius:50%;background:#ffffff99}
+  .sl-dots span.on{background:var(--yellow)}
+  @media(max-width:760px){
+    .sliders{grid-template-columns:1fr}
+    .slider-v{aspect-ratio:3/4;max-width:420px;width:100%;margin-inline:auto}
+  }
+
   /* Footer */
   footer{background:#0d0f12;color:#c9ced6;padding:clamp(40px,6vw,64px) 0 30px}
   .foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(28px,4vw,44px)}
@@ -321,17 +340,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <h2>Нашите автомобили</h2>
     <p class="lead">Разполагаме с 4 различни автомобила с климатик, за да подберем най-подходящия за вашето пътуване — независимо дали пътувате сами, като двойка или на група.</p>
-    <div class="grid fleet-grid">
-      <div class="card">
-        <div class="ph"><img src="2ra.jpg" alt="Такси Китен-Приморско — жълто Dodge Charger SRT такси" loading="lazy" decoding="async"></div>
-        <div class="body">
-          <h3>Комфортен седан</h3>
-          <div class="meta"><span>👤 до 4 пътници</span><span>🧳 багаж</span></div>
-          <p style="color:var(--grey);font-size:.95rem">Един от нашите 4 автомобила — представителен избор за бързо и удобно пътуване в района и до морските курорти.</p>
-          <a href="tel:+359895797009" class="btn btn-primary">Обади се</a>
+    <div class="sliders">
+      <div class="slider slider-h" aria-label="Снимки на автомобилите">
+        <div class="slides">
+          <img src="fleet-h1.jpg" alt="Такси Китен-Приморско — жълт Dodge Charger SRT, страничен изглед" loading="lazy" decoding="async">
+          <img src="fleet-h2.jpg" alt="Dodge Charger SRT такси по залез" loading="lazy" decoding="async">
+          <img src="fleet-h3.jpg" alt="Dodge Charger SRT такси сред природата" loading="lazy" decoding="async">
+          <img src="fleet-h4.jpg" alt="Интериор на таксито — чисто и комфортно" loading="lazy" decoding="async">
+          <img src="fleet-h5.jpg" alt="Жълт миниван такси — простор за групи и багаж" loading="lazy" decoding="async">
         </div>
+        <button class="sl-btn prev" type="button" aria-label="Предишна снимка">‹</button>
+        <button class="sl-btn next" type="button" aria-label="Следваща снимка">›</button>
+      </div>
+      <div class="slider slider-v" aria-label="Още снимки на автомобилите">
+        <div class="slides">
+          <img src="fleet-v1.jpg" alt="Dodge Charger SRT такси под дъждовно небе" loading="lazy" decoding="async">
+          <img src="fleet-v2.jpg" alt="Dodge Charger SRT — отпред, с телефон за заявки" loading="lazy" decoding="async">
+          <img src="fleet-v3.jpg" alt="Жълт миниван такси — удобен за семейства" loading="lazy" decoding="async">
+          <img src="fleet-v4.jpg" alt="Dodge Charger SRT такси — заден изглед" loading="lazy" decoding="async">
+        </div>
+        <button class="sl-btn prev" type="button" aria-label="Предишна снимка">‹</button>
+        <button class="sl-btn next" type="button" aria-label="Следваща снимка">›</button>
       </div>
     </div>
+    <div style="text-align:center;margin-top:clamp(24px,3vw,36px)"><a href="tel:+359895797009" class="btn btn-primary">📞 Обади се</a></div>
   </div>
 </section>
 
@@ -484,6 +516,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     m.style.position='absolute';m.style.top='70px';m.style.right='20px';
     m.style.flexDirection='column';m.style.background='#fff';
     m.style.padding='16px 22px';m.style.borderRadius='12px';m.style.boxShadow='0 8px 30px rgba(0,0,0,.15)';
+  });
+
+
+  /* ---- Fleet sliders ---- */
+  document.querySelectorAll('.slider').forEach(function(sl){
+    var slides=sl.querySelector('.slides');
+    var n=slides.children.length,i=0,timer;
+    var dots=document.createElement('div');dots.className='sl-dots';
+    for(var k=0;k<n;k++){dots.appendChild(document.createElement('span'));}
+    sl.appendChild(dots);
+    function upd(){[].forEach.call(dots.children,function(d,k){d.className=(k===i)?'on':'';});}
+    function go(k){i=(k+n)%n;slides.scrollTo({left:slides.clientWidth*i,behavior:'smooth'});upd();}
+    sl.querySelector('.prev').addEventListener('click',function(){go(i-1);reset();});
+    sl.querySelector('.next').addEventListener('click',function(){go(i+1);reset();});
+    slides.addEventListener('scroll',function(){var k=Math.round(slides.scrollLeft/slides.clientWidth);if(k!==i&&k>=0&&k<n){i=k;upd();}});
+    function reset(){clearInterval(timer);timer=setInterval(function(){go(i+1);},5000);}
+    reset();upd();
   });
 
   /* ---- Conversion & event tracking (GA4 + Google Ads) ---- */
