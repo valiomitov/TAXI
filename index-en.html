@@ -235,23 +235,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .rev .who span{display:block;color:var(--grey);font-weight:500}
 
 
-  /* Fleet sliders */
-  .sliders{display:grid;grid-template-columns:2fr 1fr;gap:clamp(16px,2.2vw,28px);align-items:stretch}
-  .slider{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#eef0f3}
-  .slider-h{aspect-ratio:3/2}
+  /* Fleet slider */
+  .slider{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#111418;max-width:960px;margin-inline:auto;aspect-ratio:3/2}
   .slider .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;height:100%}
   .slider .slides::-webkit-scrollbar{display:none}
   .slider .slides img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:center}
+  .slider .slides img.v{object-fit:contain}
   .sl-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:#ffffffd9;color:var(--ink);font-size:1.5rem;font-weight:800;cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.25);line-height:1;padding:0 0 4px}
   .sl-btn:hover{background:var(--yellow)}
   .sl-btn.prev{left:12px}.sl-btn.next{right:12px}
   .sl-dots{position:absolute;bottom:10px;left:0;right:0;display:flex;gap:6px;justify-content:center;pointer-events:none}
   .sl-dots span{width:8px;height:8px;border-radius:50%;background:#ffffff99}
   .sl-dots span.on{background:var(--yellow)}
-  @media(max-width:760px){
-    .sliders{grid-template-columns:1fr}
-    .slider-v{aspect-ratio:3/4;max-width:420px;width:100%;margin-inline:auto}
-  }
+  @media(max-width:760px){.slider{aspect-ratio:4/3}}
 
   /* Footer */
   footer{background:#0d0f12;color:#c9ced6;padding:clamp(40px,6vw,64px) 0 30px}
@@ -340,28 +336,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <h2>Our vehicles</h2>
     <p class="lead">We have 4 different air-conditioned vehicles, so we can pick the right one for your trip — whether you travel alone, as a couple or in a group.</p>
-    <div class="sliders">
-      <div class="slider slider-h" aria-label="Photos of our vehicles">
+    <div class="slider" aria-label="Photos of our vehicles">
         <div class="slides">
           <img src="fleet-h1.jpg" alt="Taxi Kiten-Primorsko — yellow Dodge Charger SRT, side view" loading="lazy" decoding="async">
+          <img src="fleet-v1.jpg" class="v" alt="Dodge Charger SRT taxi under a stormy sky" loading="lazy" decoding="async">
           <img src="fleet-h2.jpg" alt="Dodge Charger SRT taxi at sunset" loading="lazy" decoding="async">
+          <img src="fleet-v2.jpg" class="v" alt="Dodge Charger SRT — front view with booking phone" loading="lazy" decoding="async">
           <img src="fleet-h3.jpg" alt="Dodge Charger SRT taxi in the countryside" loading="lazy" decoding="async">
+          <img src="fleet-v3.jpg" class="v" alt="Yellow minivan taxi — great for families" loading="lazy" decoding="async">
           <img src="fleet-h4.jpg" alt="Taxi interior — clean and comfortable" loading="lazy" decoding="async">
+          <img src="fleet-v4.jpg" class="v" alt="Dodge Charger SRT taxi — rear view" loading="lazy" decoding="async">
           <img src="fleet-h5.jpg" alt="Yellow minivan taxi — room for groups and luggage" loading="lazy" decoding="async">
         </div>
         <button class="sl-btn prev" type="button" aria-label="Previous photo">‹</button>
         <button class="sl-btn next" type="button" aria-label="Next photo">›</button>
-      </div>
-      <div class="slider slider-v" aria-label="More photos of our vehicles">
-        <div class="slides">
-          <img src="fleet-v1.jpg" alt="Dodge Charger SRT taxi under a stormy sky" loading="lazy" decoding="async">
-          <img src="fleet-v2.jpg" alt="Dodge Charger SRT — front view with booking phone" loading="lazy" decoding="async">
-          <img src="fleet-v3.jpg" alt="Yellow minivan taxi — great for families" loading="lazy" decoding="async">
-          <img src="fleet-v4.jpg" alt="Dodge Charger SRT taxi — rear view" loading="lazy" decoding="async">
-        </div>
-        <button class="sl-btn prev" type="button" aria-label="Previous photo">‹</button>
-        <button class="sl-btn next" type="button" aria-label="Next photo">›</button>
-      </div>
     </div>
     <div style="text-align:center;margin-top:clamp(24px,3vw,36px)"><a href="tel:+359895797009" class="btn btn-primary">📞 Call us</a></div>
   </div>
