@@ -249,6 +249,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .sl-dots span.on{background:var(--yellow)}
   @media(max-width:760px){.slider{aspect-ratio:4/3}}
 
+  /* Floating call button */
+  .call-fab{position:fixed;right:18px;bottom:18px;z-index:90;display:flex;align-items:center;gap:10px;background:#1fab4b;color:#fff;font-weight:800;font-size:1.05rem;padding:14px 24px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.35);animation:fab-pulse 2s infinite;white-space:nowrap}
+  .call-fab:hover{background:#18913e}
+  @keyframes fab-pulse{
+    0%{box-shadow:0 10px 30px rgba(0,0,0,.35),0 0 0 0 rgba(31,171,75,.55)}
+    70%{box-shadow:0 10px 30px rgba(0,0,0,.35),0 0 0 18px rgba(31,171,75,0)}
+    100%{box-shadow:0 10px 30px rgba(0,0,0,.35),0 0 0 0 rgba(31,171,75,0)}
+  }
+  @media(max-width:760px){.call-fab{right:14px;bottom:14px;padding:13px 20px}}
+
   /* Footer */
   footer{background:#0d0f12;color:#c9ced6;padding:clamp(40px,6vw,64px) 0 30px}
   .foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(28px,4vw,44px)}
@@ -496,6 +506,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     © 2026 Такси Китен-Приморско. Всички права запазени.
   </div>
 </footer>
+
+<a href="tel:+359895797009" class="call-fab" aria-label="Обади се сега">📞 Обади се сега</a>
 
 <script>
   document.querySelector('.burger').addEventListener('click',function(){
